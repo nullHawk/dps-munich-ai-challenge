@@ -3,7 +3,7 @@ import pandas as pd
 
 # Load the SARIMA model and training data
 try:
-    model = joblib.load('data/sarima.pkl')
+    model = joblib.load('checkpoints/sarima_model.pkl')
     print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading model: {e}")

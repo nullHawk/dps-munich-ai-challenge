@@ -2,11 +2,10 @@ from fastapi import FastAPI
 from models.prediction import predict
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
-from models.prediction_service import get_prediction
+from services.prediction_service import get_prediction
 
 app = FastAPI()
 
-# Create a Pydantic model for request validation
 class PredictionRequest(BaseModel):
     year: int
     month: int
@@ -20,4 +19,4 @@ async def make_prediction(request: PredictionRequest):
 
 @app.get("/")
 async def read_root():
-    return {"message": "DPS Munich AI Challenge!"}
+    return {"message": "Welcome to the SARIMA prediction API!"}
